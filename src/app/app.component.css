@@ -1,0 +1,43 @@
+.img-position {
+    text-align: center;
+    background-color: #f0f3f4;
+}
+
+.headerTitle {
+    padding: 15px;
+    color: #ffffff;
+    background-color: #546991;
+}
+
+.h2-background {
+    padding: 1px 0px 5px 15px;
+    background-color: #ffffff;
+}
+
+form {
+    width: 94%;
+    padding: 15px;
+    display: inline-grid;
+    background-color: #ffffff;
+}
+.formDetails {
+    width: 500px;
+    margin: 0 auto;
+    padding: 40px 0px 40px 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formSign-padding {
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.infoAfterSuccess:before {
+    content: url('../assets/img/ok.png');
+}
+.infoAfterSuccess {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    color: #729800;
+}

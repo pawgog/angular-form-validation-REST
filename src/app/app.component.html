@@ -1,0 +1,80 @@
+<div class="formDetails">
+  <div class="img-position">
+    <img src="../assets/img/logo.png" alt="TELROCK logo" height="60" width="230">
+  </div>
+  <div class="headerTitle">SIGN IN</div>
+  <div class="h2-background">
+    <h2 class="form-padding">Please enter your information below</h2>
+  </div>
+  <form novalidate class="formSign form-padding" [formGroup]="inputFormControl" (ngSubmit)="onSubmit(customerNumber.value, birth.value, postCode.value, lastName.value, telephone.value)">
+
+    <md-form-field class="formSign-padding">
+      <md-icon mdPrefix>assignment_ind</md-icon>
+      <input #customerNumber mdInput placeholder="Customer account number" [formControl]="inputFormControl.controls['customerNumber']">
+      <md-error *ngIf="inputFormControl.controls['customerNumber'].hasError('required')">
+        This field is <strong>mandatory</strong>
+      </md-error>
+      <md-error *ngIf="inputFormControl.controls['customerNumber'].hasError('minlength')">
+        Account number is <strong>too short</strong>
+      </md-error>
+      <md-error *ngIf="inputFormControl.controls['customerNumber'].hasError('pattern')">
+        Use only <strong>numbers</strong>
+      </md-error>
+    </md-form-field>
+
+    <md-form-field class="formSign-padding">
+      <md-icon mdPrefix>cake</md-icon>
+      <input #birth type="text" mdInput placeholder="Date of birth" [formControl]="inputFormControl.controls['birth']">
+      <md-error *ngIf="inputFormControl.controls['birth'].hasError('required')">
+        This field is <strong>mandatory</strong>
+      </md-error>
+      <md-error *ngIf="inputFormControl.controls['birth'].hasError('minlength')">
+        Date is <strong>too short</strong>
+      </md-error>
+    </md-form-field>
+
+    <md-form-field class="formSign-padding">
+      <md-icon mdPrefix>mail</md-icon>
+      <input #postCode type="text" mdInput placeholder="Post Code" [formControl]="inputFormControl.controls['postCode']">
+      <md-error *ngIf="inputFormControl.controls['postCode'].hasError('required')">
+        This field is <strong>mandatory</strong>
+      </md-error>
+      <md-error *ngIf="inputFormControl.controls['postCode'].hasError('minlength')">
+        Post Code is <strong>too short</strong>
+      </md-error>
+    </md-form-field>
+    
+    <md-form-field class="formSign-padding">
+      <md-icon mdPrefix>person</md-icon>
+      <input #lastName type="text" mdInput placeholder="Last name" [formControl]="inputFormControl.controls['lastName']">
+      <md-error *ngIf="inputFormControl.controls['lastName'].hasError('required')">
+        This field is <strong>mandatory</strong>
+      </md-error>
+      <md-error *ngIf="inputFormControl.controls['lastName'].hasError('minlength')">
+        Last name is <strong>too short</strong>
+      </md-error>
+    </md-form-field>
+
+    <md-form-field class="formSign-padding">
+      <md-icon mdPrefix>phone</md-icon>
+      <input #telephone mdInput placeholder="Telephone" [formControl]="inputFormControl.controls['telephone']">
+      <md-error *ngIf="inputFormControl.controls['telephone'].hasError('required')">
+        This field is <strong>mandatory</strong>
+      </md-error>
+      <md-error *ngIf="inputFormControl.controls['telephone'].hasError('minlength')">
+        Telephone number is <strong>too short</strong>
+      </md-error>
+      <md-error *ngIf="inputFormControl.controls['telephone'].hasError('pattern')">
+        Use only <strong>numbers</strong>
+      </md-error>
+    </md-form-field>
+    <button type="submit" md-raised-button color="primary" [disabled]="!inputFormControl.valid">Sign in</button>
+  </form>
+    <div class="infoAfterSuccess" *ngIf="afterSuccess==true">
+      Sign in success.
+    </div>
+    <div class="h2-background" *ngIf="!inputFormControl.valid">
+      <h2 class="form-padding">All fields are mandatory</h2>
+  </div>
+</div>
+
