@@ -3,16 +3,12 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
-
 @Injectable()
 export class AppService {
 
   constructor(private http: Http) { }
   
-  postUsersAPI(data: any[]){
+  postUsersAPI(data: any[]) : Observable<any>{
       return this.http.post("https://private-77a70-testdummyapi.apiary-mock.com/idv/process", data);
     }  
 
